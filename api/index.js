@@ -12,7 +12,7 @@ const apiFolders = readdirSync('api', {
   withFileTypes: true
 }).filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name);
-console.log(apiFolders)
+console.log(`rutas cargadas---> ${apiFolders}`)
 
 apiFolders.forEach(async folder => {
   const routes = await import(`./${folder}/index.js`)
